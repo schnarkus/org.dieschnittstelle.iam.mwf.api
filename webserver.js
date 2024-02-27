@@ -12,7 +12,7 @@ var https = require("https");
 var url = require("url");
 var fs = require("fs");
 // added as proposed by A. Zoellner in W2020 for solving video delivery issue for iOS
-var mime = require("./node_modules/mime");
+var mime = require("mime");
 const { pipeline } = require("stream");
 
 var utils = require("./njsimpl/njsutils");
