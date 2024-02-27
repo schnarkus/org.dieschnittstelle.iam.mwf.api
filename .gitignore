@@ -6,3 +6,5 @@
 
 # Project exclude paths
 /node_modules/
+/www/content/img/*
+/www/content/mov/*
