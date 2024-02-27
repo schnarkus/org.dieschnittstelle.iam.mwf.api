@@ -1,0 +1,8 @@
+# Project exclude paths
+/containerise/njs/njsimpl/
+/containerise/njs/node_modules/
+/containerise/njs/www/
+/containerise/njs/webserver.js
+
+# Project exclude paths
+/node_modules/
