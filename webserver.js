@@ -3,6 +3,8 @@
  */
 
 const localOnly = true;
+// the port on which the server will be started
+var port = 7077;
 
 // this is for switching between the standard and the new theme mode for displaying the views
 let themes = false;
@@ -23,8 +25,6 @@ var http2mdb = require("./njsimpl/http2mdb");
 var server;
 // the HTTPS server
 var httpsServer;
-// the port on which the server will be started
-var port = 7077;
 // the ip address
 var ip = localOnly ? "127.0.0.1" : utils.getIPAddress();
 // the segment for identifying the rest api
