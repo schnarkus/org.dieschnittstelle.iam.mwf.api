@@ -5,13 +5,15 @@ For educational use only. Also see LICENSE file.
 - make sure that Node.js and npm are installed; see: https://docs.npmjs.com/downloading-and-installing-node-js-and-npm
 - you also need a local installation of the MongoDB community server; see: https://www.mongodb.com/try/download/community
 
-# Build
+# Install dependencies
 in the project directory, run: npm install
 
 # Run
 - start mongodb
 - in the project directory, run: node webserver.js
-- try accessing: http://localhost:7077/api/mediaitems; you should receive the following result: {"data":[]}
+
+# Access
+try accessing: http://localhost:7077/api/mediaitems; you should receive the following result: {"data":[]}
 
 # Note
 - please note that api access is neither password-protected, nor, by default, secure
