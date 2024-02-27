@@ -1,4 +1,4 @@
-## MWF Framework Simple API Server. 
+## MWF Framework simple API server. 
 For educational use only. Also see LICENSE file.
 
 # Prerequisites
