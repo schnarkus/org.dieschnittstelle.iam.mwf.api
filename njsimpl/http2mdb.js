@@ -137,7 +137,10 @@ function CRUDImpl(tenant) {
                         deleteObject(collection, mdbrequest.objectid, req, res, client);
                     }
                     else if (req.method == "OPTIONS") {
-                        respondSuccess(res,null,"GET, POST, PUT, DELETE, OPTIONS");
+                        respondSuccess(res,null,"GET, POST, PUT, DELETE, HEAD, OPTIONS");
+                    }
+                    else if (req.method == "HEAD") {
+                        respondSuccess(res,null,"GET, POST, PUT, DELETE, HEAD, OPTIONS");
                     }
                     else {
                         client.close();
@@ -316,6 +319,8 @@ function CRUDImpl(tenant) {
      * utility functions for sending success and error responses
      */
     function respondSuccess(res, json, plaintext) {
+        console.log(databaseLogPrefix + ".respondSuccess(): setting response headers (including CORS)");
+
         if (json || plaintext) {
             res.writeHead(200, {
                 'Content-Type': 'application/json',
