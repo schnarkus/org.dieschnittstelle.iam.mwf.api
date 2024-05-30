@@ -4,6 +4,7 @@ For educational use only. Also see LICENSE file.
 # Prerequisites
 - make sure that Node.js and npm are installed; see: https://docs.npmjs.com/downloading-and-installing-node-js-and-npm
 - you also need a local installation of the MongoDB community server; see: https://www.mongodb.com/try/download/community
+- for setting up MongoDB as "external tool" in WebStorm, set the root of this project as working directory and specify the arguments as follows: -dbpath ./mdb/mdbdata/db
 
 # Install dependencies
 in the project directory, run: npm install
