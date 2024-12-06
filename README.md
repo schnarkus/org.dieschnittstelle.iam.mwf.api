@@ -30,7 +30,7 @@ Assuming you want to upload the content of a local file called \"lorem.jpeg\" an
 In JavaScript use FormData for dealing with multipart form requests: https://developer.mozilla.org/en-US/docs/Web/API/FormData
 
 ## Switching between localhost and "public" provisision
-In webserver.js, use the "localOnly" constant for starting the webserver using the ip of your respective network. Note, however, that access to the api is neither authorised nor encrypted.
+In webserver.js, set the "localOnly" constant to false, for starting the webserver for access inside your respective network. Note, however, that access to the api is neither authorised nor encrypted.
 
 ## Note
 - please note that api access is neither password-protected, nor, by default, secure
