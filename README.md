@@ -17,7 +17,7 @@ in the project directory, run: npm install
 try accessing: http://localhost:7077/api/mediaitems; you should receive the following result: {"data":[]}
 
 # Upload data
-The api provides a simple upload functionality for server-side storage of images, videos etc.:
+The api provides a simple upload functionality for server-side storage of images and videos:
 - send a POST request with content type multipart/form-data to the following URL: http://localhost:7077/api/upload.
 - the response body will then, e.g., contain a result of the following form: {"data":{"contentType":"\<type>\","\<field\>":"content/img/\<timestamp\>_\<filename\>.jpg"}}, where \<filename\> is the name of the local file, the content of which has been uploaded, \<type\> is the content type of this file, \<timestamp\> the time when the upload was received by the server, and \<field\> is the name of the (single) field in the uploaded form whose value is the uploaded content, which can be determined by the users of the api themselves
 
@@ -28,6 +28,9 @@ Assuming you want to upload the content of a local file called \"lorem.jpeg\" an
 
 # Upload with JavaScript 
 In JavaScript use FormData for dealing with multipart form requests: https://developer.mozilla.org/en-US/docs/Web/API/FormData
+
+# Switching between localhost and "public" provisision
+In webserver.js, use the "localOnly" constant for starting the webserver using the ip of your respective network. Note, however, that access to the api is neither authorised nor encrypted.
 
 # Note
 - please note that api access is neither password-protected, nor, by default, secure
