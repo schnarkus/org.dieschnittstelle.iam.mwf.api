@@ -18,12 +18,12 @@ try accessing: http://localhost:7077/api/mediaitems; you should receive the foll
 
 # Upload data
 The api provides a simple upload functionality for server-side storage of images, videos etc.:
-- send a POST request with ContentType multipart/form-data to the following URL: http://localhost:7077/api/upload.
-- the response body will the, e.g., contain a result of the following structure: {"data":{"contentType":"<type>","<field>":"content/img/<timestamp>_<filename>.jpg"}}, where <filename> is the name of the local file, the content of which has been uploaded, <type> is the content type of this file, <timestamp> the time when the upload was received by the server and <field> is the name of the (single) field in the uploaded form whose value is the uploaded content, which can be determined by the users of the api themselves
+- send a POST request with content type multipart/form-data to the following URL: http://localhost:7077/api/upload.
+- the response body will then, e.g., contain a result of the following form: {"data":{"contentType":"\<type>\","\<field\>":"content/img/\<timestamp\>_\<filename\>.jpg"}}, where \<filename\> is the name of the local file, the content of which has been uploaded, \<type\> is the content type of this file, \<timestamp\> the time when the upload was received by the server, and \<field\> is the name of the (single) field in the uploaded form whose value is the uploaded content, which can be determined by the users of the api themselves
 
 # Upload data example
-Assuming you want to upload the content of a local file called lorem.jpeg and use the name "filedata" for the field that contains the data to be uploaded, then, when using curl, request and response look as follows:
-- request: curl -v -F filedata=@lorem.jpg http://127.0.0.1:7077/api/upload
+Assuming you want to upload the content of a local file called \"lorem.jpeg\" and use the name "filedata" for the field that contains the data to be uploaded, then, when using curl, request and response look as follows:
+- request: curl -v -F filedata=@lorem.jpg http://localhost:7077/api/upload
 - response: {"data":{"contentType":"image/jpeg","upload":"content/img/1733475259741_lorem.jpg"}}
 
 # Upload with JavaScript 
