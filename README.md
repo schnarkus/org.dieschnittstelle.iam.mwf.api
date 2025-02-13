@@ -3,7 +3,7 @@ For educational use only. Also see LICENSE file.
 
 ## Prerequisites
 - make sure that Node.js and npm are installed; see: https://docs.npmjs.com/downloading-and-installing-node-js-and-npm
-- you also need a local installation of the MongoDB community server; see: https://www.mongodb.com/try/download/community
+- in case you want to use the CRUD API provided by the server and not only the file upload API you also need a local installation of the MongoDB community server; see: https://www.mongodb.com/try/download/community
 - for setting up MongoDB as "external tool" in WebStorm, set the root of this project as working directory and specify the arguments as follows: -dbpath ./mdb/mdbdata/db
 
 ## Install dependencies
@@ -12,9 +12,6 @@ in the project directory, run: npm install
 ## Run
 - start mongodb
 - in the project directory, run: node webserver.js
-
-## Access
-try accessing: http://localhost:7077/api/mediaitems; you should receive the following result: {"data":[]}
 
 ## Upload data
 The api provides a simple upload functionality for server-side storage of images and videos:
@@ -28,6 +25,9 @@ Assuming you want to upload the content of a local file called \"lorem.jpeg\" an
 
 ## Upload with JavaScript 
 In JavaScript use FormData for dealing with multipart form requests: https://developer.mozilla.org/en-US/docs/Web/API/FormData
+
+## CRUD API
+for testing CRUD access, make sure you have MongoDB installed and running. Then try accessing: http://localhost:7077/api/mediaitems; you should receive the following result: {"data":[]}
 
 ## Switching between localhost and "public" provisision
 In webserver.js, set the "localOnly" constant to false, for starting the webserver for access inside your respective network. Note, however, that access to the api is neither authorised nor encrypted.
