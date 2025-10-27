@@ -4,6 +4,10 @@
   "description": "",
   "main": "webserver.js",
   "scripts": {
+    "start:mongodb": "mongod --dbpath ./mdb/mdbdata/db --bind_ip 127.0.0.1 --port 27017 --fork --logpath /tmp/mongod.log",
+    "start:api": "node webserver.js",
+    "start:all": "sh -c 'ss -ltnp | grep -q \":27017\" || mongod --dbpath ./mdb/mdbdata/db --bind_ip 127.0.0.1 --port 27017 --fork --logpath /tmp/mongod.log; node webserver.js'",
+    "api": "npm run start:all",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
