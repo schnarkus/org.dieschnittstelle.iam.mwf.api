@@ -7,6 +7,7 @@
     "start:mongodb": "mongod --dbpath ./mdb/mdbdata/db --bind_ip 127.0.0.1 --port 27017 --fork --logpath /tmp/mongod.log",
     "start:api": "node webserver.js",
     "start:all": "sh -c 'ss -ltnp | grep -q \":27017\" || mongod --dbpath ./mdb/mdbdata/db --bind_ip 127.0.0.1 --port 27017 --fork --logpath /tmp/mongod.log; node webserver.js'",
+    "clean:start": "sh -c 'pkill mongod 2>/dev/null || true; sleep 2; rm -rf ./mdb/mdbdata/db/*; mongod --dbpath ./mdb/mdbdata/db --bind_ip 127.0.0.1 --port 27017 --fork --logpath /tmp/mongod.log; sleep 2; node webserver.js'",
     "api": "npm run start:all",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -20,5 +21,6 @@
     "mime": "^3.0.0",
     "mongodb": "^4.9.0",
     "node-fetch": "^2.6.1"
-  }
+  },
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
 }
